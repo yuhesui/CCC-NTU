@@ -37,10 +37,11 @@ export class Navigation {
         header.innerHTML = `
             <nav class="flex items-center justify-between px-4 md:px-8 py-4 bg-paper/90 backdrop-blur-md border-b border-sage-green/20 sticky-nav shadow-sm">
                 <div class="flex items-center gap-3">
-                    <img src="https://img.icons8.com/ios-filled/50/1B3B6F/lotus.png" class="w-8 h-8 md:w-10 md:h-10" />
+                    <img src="https://img.icons8.com/ios-filled/50/1B3B6F/lotus.png" alt="Lotus logo" class="w-8 h-8 md:w-10 md:h-10" />
                     <div>
-                        <h1 class="font-playfair font-bold text-midnight-blue leading-none text-sm md:text-base">CCC 11th</h1>
-                        <p class="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-sage-green">Elemental Genesis</p>
+                        <h1 class="font-playfair font-bold text-midnight-blue leading-none text-sm md:text-base">
+                            <span class="block">五行归序传 <span class="font-playfair italic text-[10px] md:text-sm text-sage-green ml-2">Elemental Genesis</span></span>
+                        </h1>
                     </div>
                 </div>
                 
@@ -123,11 +124,8 @@ export class Navigation {
         if (!musicBtn) return;
 
 
-        const isPlaying = localStorage.getItem('ccc_music_playing') === 'true';
-        
 
-
-        if (!this.audio) {
+         if (!this.audio) {
             this.audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-traditional-japanese-meditation-soft-539.mp3');
             this.audio.loop = true;
             this.audio.volume = 0.3;
