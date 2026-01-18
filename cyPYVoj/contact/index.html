@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the 11th Chinese Cultural Camp (CCC) at NTU. Reach out for inquiries about registration, sponsorship, or event details.">
+    <meta property="og:title" content="Contact Us | 11th CCC Elemental Genesis">
+    <meta property="og:description" content="Get in touch with the CCC NTU team. Let's connect and celebrate Chinese culture together.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    
+    <title>Contact Us | 11th CCC Elemental Genesis</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="./contact_styles.css">
+</head>
+<body class="bg-paper text-ink-black font-noto overflow-x-hidden">
+
+    <!-- Global Navigation -->
+    <header id="global-header" class="fixed top-0 w-full z-50 transition-all duration-300"></header>
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <!-- Hero Title -->
+        <section class="text-center mb-16" data-aos="fade-up" id="contact-hero">
+            <h1 class="font-playfair text-5xl md:text-7xl mb-4 text-midnight-blue ink-title" data-i18n="contact_hero_title">Contact Us</h1>
+            <p class="font-noto text-sage-green text-xl md:text-2xl opacity-90" data-i18n="contact_hero_subtitle">联系我们</p>
+            <div class="brush-divider mx-auto mt-8"></div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left: Inquiry Form -->
+            <section class="bg-white/60 backdrop-blur-md p-8 rounded-lg shadow-sm border border-sage-green/20 relative overflow-hidden" id="form-container">
+                <div class="absolute -top-10 -right-10 opacity-10">
+                    <img src="https://img.icons8.com/ios/100/null/inkwell.png" class="w-40 h-40 pointer-events-none" />
+                </div>
+                
+                <h2 class="font-playfair text-3xl mb-6 text-midnight-blue flex items-center gap-2">
+                    <i data-lucide="mail" class="w-6 h-6 text-gold"></i>
+                    <span data-i18n="form_title">Send an Inquiry</span>
+                </h2>
+                
+                <form id="contact-form" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="text-sm font-bold mb-2 text-brush-gray" data-i18n="label_name">Full Name | 姓名</label>
+                            <input type="text" name="name" required class="bg-transparent border-b-2 border-sage-green/30 focus:border-gold outline-none py-2 transition-colors duration-300 placeholder-brush-gray/50" placeholder="e.g. Zhang Wei">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm font-bold mb-2 text-brush-gray" data-i18n="label_email">Email | 电子邮件</label>
+                            <input type="email" name="email" required class="bg-transparent border-b-2 border-sage-green/30 focus:border-gold outline-none py-2 transition-colors duration-300 placeholder-brush-gray/50" placeholder="yourname@domain.com">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold mb-2 text-brush-gray" data-i18n="label_subject">Subject | 主题</label>
+                        <select name="subject" class="bg-transparent border-b-2 border-sage-green/30 focus:border-gold outline-none py-2 transition-colors duration-300">
+                            <option value="general" data-i18n="opt_general">General Inquiry | 一般咨询</option>
+                            <option value="registration" data-i18n="opt_reg">Registration Issue | 报名问题</option>
+                            <option value="sponsorship" data-i18n="opt_spon">Sponsorship | 赞助合作</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold mb-2 text-brush-gray" data-i18n="label_message">Message | 信息</label>
+                        <textarea name="message" rows="5" required class="bg-transparent border-2 border-sage-green/30 focus:border-gold rounded-md p-3 outline-none transition-colors duration-300 resize-none placeholder-brush-gray/50" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-midnight-blue text-paper-white py-4 rounded-md font-bold hover:bg-gold hover:text-midnight-blue transition-all duration-500 transform hover:-translate-y-1 shadow-lg group">
+                        <span data-i18n="btn_submit" class="flex items-center justify-center gap-2">
+                            Submit Inquiry | 提交咨询
+                            <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </button>
+                </form>
+                <div id="form-status" class="hidden mt-6 p-4 rounded-md text-center font-bold"></div>
+            </section>
+
+            <!-- Right: Details & Map -->
+            <section class="space-y-12" id="info-details">
+                <!-- Org Details -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6 group">
+                        <div class="p-4 bg-sage-green/10 rounded-full group-hover:bg-gold/20 transition-colors">
+                            <i data-lucide="map-pin" class="w-8 h-8 text-midnight-blue"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl text-midnight-blue" data-i18n="info_loc_title">Location</h3>
+                            <p class="text-brush-gray mt-2 leading-relaxed" data-i18n="info_loc_desc">
+                                Chinese Society NTU<br>
+                                Nanyang Technological University<br>
+                                50 Nanyang Ave, Singapore 639798
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 group">
+                        <div class="p-4 bg-sage-green/10 rounded-full group-hover:bg-gold/20 transition-colors">
+                            <i data-lucide="mail-check" class="w-8 h-8 text-midnight-blue"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl text-midnight-blue" data-i18n="info_email_title">Email</h3>
+                            <a href="mailto:ccc@ntu.edu.sg" class="text-midnight-blue font-bold border-b border-gold hover:text-gold transition-colors text-lg">ccc@ntu.edu.sg</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 group">
+                        <div class="p-4 bg-sage-green/10 rounded-full group-hover:bg-gold/20 transition-colors">
+                            <i data-lucide="share-2" class="w-8 h-8 text-midnight-blue"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl text-midnight-blue" data-i18n="info_social_title">Follow Us</h3>
+                            <div class="flex gap-4 mt-3">
+                                <a href="#" class="text-brush-gray hover:text-midnight-blue transition-colors p-2 rounded-md hover:bg-sage-green/10"><i data-lucide="instagram"></i></a>
+                                <a href="#" class="text-brush-gray hover:text-midnight-blue transition-colors p-2 rounded-md hover:bg-sage-green/10"><i data-lucide="facebook"></i></a>
+                                <a href="#" class="text-brush-gray hover:text-midnight-blue transition-colors p-2 rounded-md hover:bg-sage-green/10"><i data-lucide="message-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Integration -->
+                <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white relative h-80 group" id="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.667794017772!2d103.6814674758504!3d1.345638561814364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0fd8d7168863%3A0x16347313a3ca7469!2sNanyang%20Technological%20University!5e0!3m2!1sen!2ssg!4v1705500000000!5m2!1sen!2ssg" 
+                        class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute bottom-4 right-4 bg-white/90 px-4 py-2 rounded shadow-md text-xs font-bold text-midnight-blue uppercase tracking-widest pointer-events-none">
+                        NTU North Spine Hub
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
+
+    <script type="module" src="./contact_logic.js"></script>
+</body>
+</html>

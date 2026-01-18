@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11th Chinese Cultural Camp | Elemental Genesis</title>
+    
+    <!-- Bilingual SEO / OpenGraph -->
+    <meta name="description" content="Join the 11th CCC at NTU. Explore traditional Chinese culture through the Five Elements (Wu Xing). May 30 - June 1.">
+    <meta property="og:title" content="11th CCC Elemental Genesis | 五行归序传">
+    <meta property="og:description" content="Ink defines the world; the Five Elements restore the order. Rediscover your cultural roots.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-paper text-ink-black font-noto overflow-x-hidden selection:bg-gold/30">
+
+    <!-- Ink Wash Transition Overlay -->
+    <div id="shuimo-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 flex items-center justify-center">
+        <div class="ink-blob w-[150vmax] h-[150vmax] bg-midnight-blue rounded-full scale-0"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="global-header" class="fixed top-0 w-full z-50 transition-all duration-300"></header>
+
+    <!-- Main Content Area -->
+    <main id="app-view" class="min-h-screen pt-20"></main>
+
+    <!-- Audio Player UI -->
+    <div id="audio-control-bar" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+
+    <!-- Footer -->
+    <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
