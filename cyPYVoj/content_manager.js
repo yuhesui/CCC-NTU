@@ -10,19 +10,26 @@ export const contentManager = {
                 return `
                 <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542332213-31f87348057f')] bg-cover bg-center opacity-20"></div>
-                    <div class="relative z-10 text-center px-6">
-                        <h2 class="font-playfair text-7xl md:text-9xl text-midnight-blue mb-6 drop-shadow-sm" data-aos="fade-up">五行归序传</h2>
-                        <p class="font-noto text-xl md:text-2xl text-sage-green max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+                        <!-- H1 (exactly one per page) -->
+                        <h1 class="font-playfair text-6xl md:text-8xl text-midnight-blue mb-5 drop-shadow-sm" data-aos="fade-up">
+                            <span class="block">五行归序传</span>
+                            <span class="block font-playfair italic text-4xl md:text-5xl mt-3">Elemental Genesis</span>
+                        </h1>
+                        <p class="font-noto text-sm md:text-base text-brush-gray/80 uppercase tracking-[0.22em] leading-relaxed" data-aos="fade-up" data-aos-delay="120">
+                            第十一届全国青年华人文化研习与生活营 / 11th Chinese Cultural Camp (CCC)
+                        </p>
+                        <p class="font-noto text-xl md:text-2xl text-sage-green max-w-2xl mx-auto leading-relaxed mt-8" data-aos="fade-up" data-aos-delay="200">
                             ${t('home_tagline')}
                         </p>
-                        <div class="mt-12 flex gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="mt-12 flex flex-wrap gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
                             <a href="#registration" class="bg-midnight-blue text-paper-white px-8 py-4 rounded-md font-bold hover:bg-gold transition-all transform hover:-translate-y-1">${t('cta_begin')}</a>
                             <a href="#about" class="border-2 border-midnight-blue text-midnight-blue px-8 py-4 rounded-md font-bold hover:bg-midnight-blue hover:text-white transition-all">${t('nav_about')}</a>
                         </div>
                     </div>
                 </section>
                 <section class="py-20 px-6 max-w-5xl mx-auto text-center">
-                    <h3 class="font-playfair text-4xl text-midnight-blue mb-10">${t('home_mission_title')}</h3>
+                    <h2 class="font-playfair text-4xl text-midnight-blue mb-10">${t('home_mission_title')}</h2>
                     <p class="text-lg text-brush-gray leading-loose font-noto">${t('home_mission_body')}</p>
                 </section>
                 `;
@@ -31,11 +38,11 @@ export const contentManager = {
                 <section class="py-20 px-6 max-w-6xl mx-auto">
                     <div class="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 class="font-playfair text-5xl text-midnight-blue mb-8">${t('about_history_title')}</h2>
+                            <h1 class="font-playfair text-5xl text-midnight-blue mb-8">${t('about_history_title')}</h1>
                             <p class="text-brush-gray leading-loose mb-6">${t('about_history_body')}</p>
                         </div>
                         <div class="bg-white/50 p-8 rounded-lg border border-sage-green/10 shadow-sm">
-                            <h3 class="font-playfair text-3xl text-gold mb-6">${t('fee_title')}</h3>
+                            <h2 class="font-playfair text-3xl text-gold mb-6">${t('fee_title')}</h2>
                             <div class="space-y-4">
                                 <div class="flex justify-between border-b border-sage-green/10 pb-2">
                                     <span>${t('fee_full')}</span>
@@ -54,49 +61,113 @@ export const contentManager = {
             case 'events':
                 return `
                 <section class="py-20 px-6 max-w-6xl mx-auto">
-                    <h2 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_events')}</h2>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="event-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold">
-                            <span class="text-xs uppercase tracking-widest text-sage-green font-bold">Main Camp</span>
-                            <h4 class="font-playfair text-2xl mt-2 mb-4">Elemental Genesis</h4>
-                            <p class="text-sm text-brush-gray mb-6">May 30 – June 1 | NTU Campus</p>
-                            <div class="text-sm leading-relaxed opacity-80">${t('event_main_desc')}</div>
+                    <h1 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_events')}</h1>
+
+                    <!-- Main camp poster card (clickable, works without JS) -->
+                    <div class="max-w-3xl mx-auto mb-14">
+                        <a href="assets/posters/SingaporeRoadshow_E.jpg" target="_blank" rel="noopener" class="block group rounded-2xl overflow-hidden border border-sage-green/15 bg-white/60 shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="relative">
+                                <img src="assets/posters/SingaporeRoadshow_E.jpg" alt="Main Camp Poster" class="w-full h-[420px] object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" decoding="async" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6">
+                                    <div class="text-xs uppercase tracking-[0.25em] text-paper-white/90 font-bold">Main Camp Poster</div>
+                                    <div class="font-playfair text-3xl text-paper-white mt-2">五行归序传 / Elemental Genesis</div>
+                                    <div class="text-sm text-paper-white/90 mt-2">${lang === 'en' ? 'Click to open the poster JPG' : '点击打开高清海报'} </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-wrap items-center justify-between gap-3">
+                                <div class="text-sm text-brush-gray leading-relaxed">
+                                    ${t('event_main_desc')}
+                                </div>
+                                <span class="inline-flex items-center gap-2 text-sm font-bold text-midnight-blue border border-midnight-blue/20 px-4 py-2 rounded-full group-hover:border-gold group-hover:text-gold transition-colors">
+                                    ${lang === 'en' ? 'View Poster' : '查看海报'}
+                                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="mt-4 text-center">
+                            <a href="assets/posters/SingaporeRoadshow_E.jpg" target="_blank" rel="noopener" class="inline-block underline underline-offset-4 text-midnight-blue hover:text-gold font-bold">
+                                ${lang === 'en' ? 'View Poster / 查看海报' : 'View Poster / 查看海报'}
+                            </a>
                         </div>
-                        <div class="event-card bg-white p-8 rounded-lg shadow-md border-t-4 border-midnight-blue">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-midnight-blue">
                             <span class="text-xs uppercase tracking-widest text-sage-green font-bold">Malaysia Online</span>
-                            <h4 class="font-playfair text-2xl mt-2 mb-4">Online Roadshow</h4>
-                            <p class="text-sm text-brush-gray mb-6">Feb 5 – Feb 8 | Zoom</p>
-                            <div class="text-sm leading-relaxed opacity-80">${t('event_my_desc')}</div>
+                            <h2 class="font-playfair text-2xl mt-2 mb-4">Online Roadshow</h2>
+                            <p class="text-sm text-brush-gray mb-4">Feb 5 – Feb 8 | Zoom</p>
+                            <div class="text-sm leading-relaxed opacity-90">${t('event_my_desc')}</div>
+                            <div class="mt-6 grid gap-3">
+                                <img src="assets/posters/MalaysiaRoadshow_E.jpg" alt="Malaysia Roadshow Poster (EN)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                                <img src="assets/posters/MalaysiaRoadshow_C.jpg" alt="Malaysia Roadshow Poster (中文)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                            </div>
                         </div>
-                        <div class="event-card bg-white p-8 rounded-lg shadow-md border-t-4 border-sage-green">
+                        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-sage-green">
                             <span class="text-xs uppercase tracking-widest text-sage-green font-bold">Singapore Physical</span>
-                            <h4 class="font-playfair text-2xl mt-2 mb-4">Campus Roadshow</h4>
-                            <p class="text-sm text-brush-gray mb-6">March 2 – March 6 | NTU</p>
-                            <div class="text-sm leading-relaxed opacity-80">${t('event_sg_desc')}</div>
+                            <h2 class="font-playfair text-2xl mt-2 mb-4">Campus Roadshow</h2>
+                            <p class="text-sm text-brush-gray mb-4">March 2 – March 6 | NTU</p>
+                            <div class="text-sm leading-relaxed opacity-90">${t('event_sg_desc')}</div>
+                            <div class="mt-6 grid gap-3">
+                                <img src="assets/posters/SingaporeRoadshow_E.jpg" alt="Singapore Roadshow Poster (EN)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                                <img src="assets/posters/SingaporeRoadshow_C.jpg" alt="Singapore Roadshow Poster (中文)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                            </div>
                         </div>
                     </div>
                 </section>
                 `;
             case 'registration':
                 return `
-                <section class="py-20 px-6 max-w-3xl mx-auto">
-                    <div class="bg-white/80 backdrop-blur-sm p-10 rounded-xl shadow-xl border border-sage-green/10">
+                <section class="py-20 px-6 max-w-4xl mx-auto">
+                    <div class="registration-panel bg-white/75 backdrop-blur-sm p-10 md:p-12 rounded-[28px] shadow-2xl border border-sage-green/10">
                         <div class="mb-10 text-center">
-                            <h2 class="font-playfair text-4xl text-midnight-blue mb-2">${t('reg_title')}</h2>
-                            <div id="reg-steps-indicator" class="flex justify-center gap-4 mt-6">
+                            <h1 class="font-playfair text-4xl md:text-5xl text-midnight-blue mb-3">${t('nav_reg')}</h1>
+                            <p class="text-sm text-brush-gray/80 leading-relaxed max-w-2xl mx-auto">
+                                ${lang === 'en'
+                                    ? 'Text below must be transcribed verbatim from assets/reference/Register-E.jpg (selectable HTML).' 
+                                    : '以下文字必须从 assets/reference/Register-C.jpg 逐字转写（可选择的HTML文本）。'}
+                            </p>
+                        </div>
+
+                        <!-- Reference-image preview (for layout QA only; copy must be real text below) -->
+                        <div class="grid md:grid-cols-2 gap-6 mb-10">
+                            <figure class="bg-paper/60 rounded-2xl border border-sage-green/10 overflow-hidden">
+                                <img src="assets/reference/Register-E.jpg" alt="Registration Reference (EN)" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                                <figcaption class="p-3 text-xs text-brush-gray/70">Reference: Register-E.jpg</figcaption>
+                            </figure>
+                            <figure class="bg-paper/60 rounded-2xl border border-sage-green/10 overflow-hidden">
+                                <img src="assets/reference/Register-C.jpg" alt="Registration Reference (简体中文)" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                                <figcaption class="p-3 text-xs text-brush-gray/70">Reference: Register-C.jpg</figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- TODO: Replace these blocks with exact OCR text from the reference images (DO NOT GUESS). -->
+                        <div class="registration-copy space-y-8">
+                            <div class="reg-card">
+                                <h2 class="reg-heading">TODO (EN): Paste exact text from Register-E.jpg</h2>
+                                <p class="reg-body">TODO: Unreadable without OCR in this environment. Please confirm the exact copy, or allow us to run OCR with an image-to-text workflow.</p>
+                            </div>
+                            <div class="reg-card">
+                                <h2 class="reg-heading">TODO (简体中文): 粘贴 Register-C.jpg 中的逐字文本</h2>
+                                <p class="reg-body">TODO：当前无法可靠逐字识别。请提供文字版或确认截图区域的内容（我会按坐标逐段补齐）。</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <div id="reg-steps-indicator" class="flex justify-center gap-4 mb-6">
                                 <div class="step-dot active w-3 h-3 rounded-full bg-gold"></div>
                                 <div class="step-dot w-3 h-3 rounded-full bg-sage-green/20"></div>
                                 <div class="step-dot w-3 h-3 rounded-full bg-sage-green/20"></div>
                             </div>
+                            <form id="reg-form" class="space-y-6"></form>
                         </div>
-                        <form id="reg-form" class="space-y-6"></form>
                     </div>
                 </section>
                 `;
             case 'faq':
                 return `
                 <section class="py-20 px-6 max-w-4xl mx-auto">
-                    <h2 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_faq')}</h2>
+                    <h1 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_faq')}</h1>
                     <div class="space-y-4">
                         ${[1,2,3,4,5,6,7,8,9,10].map(i => `
                             <details class="group bg-white/50 border border-sage-green/10 rounded-lg">
@@ -116,7 +187,7 @@ export const contentManager = {
                 return `
                 <section class="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
                     <div>
-                        <h2 class="font-playfair text-5xl text-midnight-blue mb-8">${t('nav_contact')}</h2>
+                        <h1 class="font-playfair text-5xl text-midnight-blue mb-8">${t('nav_contact')}</h1>
                         <div class="space-y-8">
                             <div class="flex gap-4">
                                 <i data-lucide="mail" class="text-gold"></i>
@@ -142,19 +213,19 @@ export const contentManager = {
             case 'gallery':
                 return `
                 <section class="py-20 px-6 max-w-7xl mx-auto">
-                    <h2 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_gallery')}</h2>
+                    <h1 class="font-playfair text-5xl text-midnight-blue mb-12 text-center">${t('nav_gallery')}</h1>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="h-64 bg-sage-green/10 rounded-lg overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery image 1">
                         </div>
                         <div class="h-64 bg-sage-green/10 rounded-lg overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery image 2">
                         </div>
                         <div class="h-80 md:row-span-2 bg-sage-green/10 rounded-lg overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1512418490979-92798ccc1380" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1512418490979-92798ccc1380" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery image 3">
                         </div>
                         <div class="h-64 bg-sage-green/10 rounded-lg overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1621327017866-da6436750343" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1621327017866-da6436750343" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery image 4">
                         </div>
                     </div>
                 </section>

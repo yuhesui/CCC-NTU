@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Simple workflow for deploying static content to Pages
 name: Deploy static content to Pages
 
 on:
@@ -31,13 +31,44 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Serve `cyPYVoj` locally for smoke test
+        # Render the static folder on the runner and verify it returns HTTP 200.
+        run: |
+          # Use python3 if available, fallback to python
+          if command -v python3 >/dev/null 2>&1; then
+            python3 -m http.server 4000 --directory cyPYVoj &>/dev/null & echo $! > server.pid
+          else
+            python -m http.server 4000 --directory cyPYVoj &>/dev/null & echo $! > server.pid
+          fi
+          # give the server a moment to start
+          sleep 2
+
+      - name: Smoke-test local server
+        run: |
+          for i in 1 2 3; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:4000 || true)
+            if [ "$status" = "200" ]; then
+              echo "Local render successful (HTTP 200)"; break
+            fi
+            echo "Attempt $i: server returned $status, retrying..."
+            sleep 1
+          done
+          if [ "$status" != "200" ]; then
+            echo "Local server did not return HTTP 200 after retries"; kill $(cat server.pid) || true; exit 1
+          fi
+          # stop the background server
+          kill $(cat server.pid) || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload only the cyPYVoj folder (this is the website root)
+          path: 'cyPYVoj'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

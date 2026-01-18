@@ -45,15 +45,13 @@ class App {
 
         header.innerHTML = `
             <nav class="flex items-center justify-between px-6 md:px-12 py-4 bg-paper/80 backdrop-blur-md border-b border-sage-green/10">
-                <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.hash='#home'">
-                    <div class="w-10 h-10 bg-midnight-blue rounded-full flex items-center justify-center text-gold">
-                        <i data-lucide="wind" class="w-6 h-6"></i>
-                    </div>
+                <a class="flex items-center gap-3" href="#home" aria-label="Home">
+                    <img src="assets/logo/logo_beige_base.png" alt="CCC Logo" class="w-10 h-10 md:w-11 md:h-11 object-contain" loading="eager" decoding="async" />
                     <div>
-                        <h1 class="font-playfair font-bold text-midnight-blue leading-none text-lg">CCC 11</h1>
+                        <div class="font-playfair font-bold text-midnight-blue leading-none text-lg">CCC</div>
                         <p class="text-[9px] uppercase tracking-[0.2em] text-sage-green font-bold">Elemental Genesis</p>
                     </div>
-                </div>
+                </a>
                 
                 <ul class="hidden lg:flex gap-8 items-center font-noto text-xs font-bold text-midnight-blue uppercase tracking-widest">
                     ${items.map(item => `
@@ -75,7 +73,10 @@ class App {
         footer.innerHTML = `
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="space-y-4">
-                    <h4 class="font-playfair text-2xl text-gold">Elemental Genesis</h4>
+                    <a href="#home" class="inline-flex items-center gap-3" aria-label="Home">
+                        <img src="assets/logo/logo_beige_base.png" alt="CCC Logo" class="w-9 h-9 object-contain" loading="lazy" decoding="async" />
+                        <div class="font-playfair text-2xl text-gold">Elemental Genesis</div>
+                    </a>
                     <p class="text-sm opacity-70 font-noto italic">"${i18n.t('footer_quote')}"</p>
                 </div>
                 <div class="space-y-4">

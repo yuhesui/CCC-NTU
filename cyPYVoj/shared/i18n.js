@@ -8,7 +8,28 @@ export const i18n = {
             nav_gallery: "Gallery",
             nav_faq: "FAQ",
             nav_contact: "Contact",
-            meta_title: "11th Chinese Cultural Camp | Elemental Genesis",
+
+            // Global naming
+            project_title_zh: "五行归序传",
+            project_title_en: "Elemental Genesis",
+            ccc_title_en: "11th Chinese Cultural Camp (CCC)",
+
+            // Meta (per-page)
+            meta_title_home: "五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_home: "Discover 五行归序传 (Elemental Genesis) — 11th Chinese Cultural Camp (CCC). Explore Chinese culture through Wu Xing and ink-wash aesthetics.",
+            meta_title_about: "About | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_about: "Learn about the camp’s heritage, concept, and participation details for the 11th Chinese Cultural Camp (CCC).",
+            meta_title_events: "Events & Posters | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_events: "View CCC event posters and key info, including roadshow details and the main camp poster.",
+            meta_title_registration: "Registration | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_registration: "Register for 五行归序传 Elemental Genesis — 11th Chinese Cultural Camp (CCC).",
+            meta_title_gallery: "Gallery | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_gallery: "A glimpse into past moments and visuals from CCC.",
+            meta_title_faq: "FAQ | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_faq: "Frequently asked questions about CCC participation, fees, logistics, and policies.",
+            meta_title_contact: "Contact | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_contact: "Contact the CCC organizing team at NTU for enquiries and support.",
+
             home_tagline: "Ink defines the world; the Five Elements restore the order. Rediscover your cultural roots through the rhythm of the brush.",
             cta_begin: "Begin Your Genesis",
             home_mission_title: "Origin: Cultivating the Cultural Soul",
@@ -42,7 +63,28 @@ export const i18n = {
             nav_gallery: "相册",
             nav_faq: "常见问题",
             nav_contact: "联系",
-            meta_title: "第十一届全国青年华人文化研习与生活营 | 五行归序传",
+
+            // Global naming
+            project_title_zh: "五行归序传",
+            project_title_en: "Elemental Genesis",
+            ccc_title_zh: "第十一届全国青年华人文化研习与生活营（青年文化营）",
+
+            // Meta (per-page)
+            meta_title_home: "五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_home: "五行归序传（Elemental Genesis）｜11th Chinese Cultural Camp (CCC)。以五行与水墨意境为引，探索中华文化与当代青年对话。",
+            meta_title_about: "关于 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_about: "了解第十一届全国青年华人文化研习与生活营（青年文化营）的理念、背景与参与信息。",
+            meta_title_events: "活动与海报 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_events: "查看CCC活动海报与路演信息，并直接打开高清海报。",
+            meta_title_registration: "报名 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_registration: "报名参加五行归序传 Elemental Genesis｜11th Chinese Cultural Camp (CCC)。",
+            meta_title_gallery: "相册 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_gallery: "回顾CCC精彩瞬间与视觉记录。",
+            meta_title_faq: "常见问题 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_faq: "关于报名、费用、行程与注意事项的常见问题解答。",
+            meta_title_contact: "联系 | 11th Chinese Cultural Camp (CCC)",
+            meta_desc_contact: "联系CCC筹委会获取更多资讯与协助。",
+
             home_tagline: "墨化万物，五行归序。在流转的笔触中，寻回文化的本源。",
             cta_begin: "开启归序之旅",
             home_mission_title: "溯源：深耕文化之魂",
@@ -85,9 +127,22 @@ export const i18n = {
         return this.dictionary[lang][key] || this.dictionary['en'][key] || key;
     },
 
-    updateMetaTags() {
-        const title = this.t('meta_title');
+    updateMetaTags(pageKey = 'home') {
+        const titleKey = `meta_title_${pageKey}`;
+        const descKey = `meta_desc_${pageKey}`;
+
+        const title = this.t(titleKey) || this.t('meta_title_home');
+        const desc = this.t(descKey) || this.t('meta_desc_home');
+
         document.title = title;
 
+        const descTag = document.querySelector('meta[name="description"]');
+        if (descTag) descTag.setAttribute('content', desc);
+
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', title);
+
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', desc);
     }
 };

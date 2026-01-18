@@ -1,5 +1,6 @@
 import { contentManager } from './content_manager.js';
 import { Registration } from './components/registration.js';
+import { i18n } from './shared/i18n.js';
 
 export class Router {
     constructor() {
@@ -16,17 +17,17 @@ export class Router {
     async handleRoute() {
         const hash = window.location.hash || '#home';
         const pageKey = hash.substring(1);
-        
+
         await this.transition(() => {
-            const html = contentManager.getPageHtml(pageKey);
-            this.viewContainer.innerHTML = html;
+            this.viewContainer.innerHTML = contentManager.getPageHtml(pageKey);
             window.scrollTo(0, 0);
-            
+
+            i18n.updateMetaTags(pageKey);
 
             if (pageKey === 'registration') {
                 new Registration().init();
             }
-            
+
             lucide.createIcons();
         });
     }
@@ -35,20 +36,21 @@ export class Router {
         const hash = window.location.hash || '#home';
         const pageKey = hash.substring(1);
         this.viewContainer.innerHTML = contentManager.getPageHtml(pageKey);
+        i18n.updateMetaTags(pageKey);
         if (pageKey === 'registration') new Registration().init();
         lucide.createIcons();
     }
 
     async transition(callback) {
         const tl = gsap.timeline();
-        
+
 
         tl.to(this.overlay, { opacity: 1, duration: 0.1 })
           .to(this.blob, { scale: 1, duration: 0.8, ease: "power3.inOut" })
           .add(() => callback())
           .to(this.blob, { scale: 0, duration: 0.8, ease: "power3.inOut" })
           .to(this.overlay, { opacity: 0, duration: 0.1 });
-          
+
         return tl;
     }
 }
