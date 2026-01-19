@@ -13,8 +13,7 @@ export const contentManager = {
                     <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
                         <!-- H1 (exactly one per page) -->
                         <h1 class="font-playfair text-6xl md:text-8xl text-midnight-blue mb-5 drop-shadow-sm" data-aos="fade-up">
-                            <span class="block">五行归序传</span>
-                            <span class="block font-playfair italic text-4xl md:text-5xl mt-3">Elemental Genesis</span>
+                            <span class="block">五行归序传 <span class="font-playfair italic text-4xl md:text-5xl mt-0">Elemental Genesis</span></span>
                         </h1>
                         <p class="font-noto text-sm md:text-base text-brush-gray/80 uppercase tracking-[0.22em] leading-relaxed" data-aos="fade-up" data-aos-delay="120">
                             第十一届全国青年华人文化研习与生活营 / 11th Chinese Cultural Camp (CCC)
@@ -65,13 +64,13 @@ export const contentManager = {
 
                     <!-- Main camp poster card (clickable, works without JS) -->
                     <div class="max-w-3xl mx-auto mb-14">
-                        <a href="assets/posters/SingaporeRoadshow_E.jpg" target="_blank" rel="noopener" class="block group rounded-2xl overflow-hidden border border-sage-green/15 bg-white/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <a href="${lang === 'en' ? 'assets/posters/SingaporeRoadshow_E.jpg' : 'assets/posters/SingaporeRoadshow_C.jpg'}" target="_blank" rel="noopener" class="block group rounded-2xl overflow-hidden border border-sage-green/15 bg-white/60 shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative">
-                                <img src="assets/posters/SingaporeRoadshow_E.jpg" alt="Main Camp Poster" class="w-full h-[420px] object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" decoding="async" />
+                                <img src="${lang === 'en' ? 'assets/posters/SingaporeRoadshow_E.jpg' : 'assets/posters/SingaporeRoadshow_C.jpg'}" alt="Main Camp Poster" class="w-full h-[420px] object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 right-0 p-6">
                                     <div class="text-xs uppercase tracking-[0.25em] text-paper-white/90 font-bold">Main Camp Poster</div>
-                                    <div class="font-playfair text-3xl text-paper-white mt-2">五行归序传 / Elemental Genesis</div>
+                                    <div class="font-playfair text-3xl text-paper-white mt-2">${lang === 'en' ? 'Elemental Genesis' : '五行归序传'}</div>
                                     <div class="text-sm text-paper-white/90 mt-2">${lang === 'en' ? 'Click to open the poster JPG' : '点击打开高清海报'} </div>
                                 </div>
                             </div>
@@ -85,11 +84,6 @@ export const contentManager = {
                                 </span>
                             </div>
                         </a>
-                        <div class="mt-4 text-center">
-                            <a href="assets/posters/SingaporeRoadshow_E.jpg" target="_blank" rel="noopener" class="inline-block underline underline-offset-4 text-midnight-blue hover:text-gold font-bold">
-                                ${lang === 'en' ? 'View Poster / 查看海报' : 'View Poster / 查看海报'}
-                            </a>
-                        </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-8">
@@ -99,8 +93,7 @@ export const contentManager = {
                             <p class="text-sm text-brush-gray mb-4">Feb 5 – Feb 8 | Zoom</p>
                             <div class="text-sm leading-relaxed opacity-90">${t('event_my_desc')}</div>
                             <div class="mt-6 grid gap-3">
-                                <img src="assets/posters/MalaysiaRoadshow_E.jpg" alt="Malaysia Roadshow Poster (EN)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
-                                <img src="assets/posters/MalaysiaRoadshow_C.jpg" alt="Malaysia Roadshow Poster (中文)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                                <img src="${lang === 'en' ? 'assets/posters/MalaysiaRoadshow_E.jpg' : 'assets/posters/MalaysiaRoadshow_C.jpg' }" alt="Malaysia Roadshow Poster" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
                             </div>
                         </div>
                         <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-sage-green">
@@ -109,8 +102,7 @@ export const contentManager = {
                             <p class="text-sm text-brush-gray mb-4">March 2 – March 6 | NTU</p>
                             <div class="text-sm leading-relaxed opacity-90">${t('event_sg_desc')}</div>
                             <div class="mt-6 grid gap-3">
-                                <img src="assets/posters/SingaporeRoadshow_E.jpg" alt="Singapore Roadshow Poster (EN)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
-                                <img src="assets/posters/SingaporeRoadshow_C.jpg" alt="Singapore Roadshow Poster (中文)" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
+                                <img src="${lang === 'en' ? 'assets/posters/SingaporeRoadshow_E.jpg' : 'assets/posters/SingaporeRoadshow_C.jpg' }" alt="Singapore Roadshow Poster" class="w-full rounded-lg border border-sage-green/10" loading="lazy" decoding="async" />
                             </div>
                         </div>
                     </div>
@@ -144,12 +136,12 @@ export const contentManager = {
                         <!-- TODO: Replace these blocks with exact OCR text from the reference images (DO NOT GUESS). -->
                         <div class="registration-copy space-y-8">
                             <div class="reg-card">
-                                <h2 class="reg-heading">TODO (EN): Paste exact text from Register-E.jpg</h2>
-                                <p class="reg-body">TODO: Unreadable without OCR in this environment. Please confirm the exact copy, or allow us to run OCR with an image-to-text workflow.</p>
+                                <h2 class="reg-heading">Registration Copy (EN)</h2>
+                                <p class="reg-body">Please provide the exact English registration text from <code>assets/reference/Register-E.jpg</code>. The reference images are shown above for layout verification.</p>
                             </div>
                             <div class="reg-card">
-                                <h2 class="reg-heading">TODO (简体中文): 粘贴 Register-C.jpg 中的逐字文本</h2>
-                                <p class="reg-body">TODO：当前无法可靠逐字识别。请提供文字版或确认截图区域的内容（我会按坐标逐段补齐）。</p>
+                                <h2 class="reg-heading">报名文本（简体中文）</h2>
+                                <p class="reg-body">请提供 <code>assets/reference/Register-C.jpg</code> 中的逐字中文文本，或确认截图区域内容以便我们补齐排版。</p>
                             </div>
                         </div>
 

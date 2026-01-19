@@ -48,7 +48,7 @@ class App {
                 <a class="flex items-center gap-3" href="#home" aria-label="Home">
                     <img src="assets/logo/logo_beige_base.png" alt="CCC Logo" class="w-10 h-10 md:w-11 md:h-11 object-contain" loading="eager" decoding="async" />
                     <div>
-                        <div class="font-playfair font-bold text-midnight-blue leading-none text-lg">CCC</div>
+                        <div class="font-playfair font-bold text-midnight-blue leading-none text-lg">五行归序传</div>
                         <p class="text-[9px] uppercase tracking-[0.2em] text-sage-green font-bold">Elemental Genesis</p>
                     </div>
                 </a>
