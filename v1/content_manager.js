@@ -9,26 +9,22 @@ export const contentManager = {
             case 'home':
                 return `
                 <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542332213-31f87348057f')] bg-cover bg-center opacity-20"></div>
-                    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-                        <!-- H1 (exactly one per page) -->
-                        <h1 class="font-playfair text-6xl md:text-8xl text-midnight-blue mb-5 drop-shadow-sm" data-aos="fade-up">
-                            <span class="block">五行归序传 <span class="font-playfair italic text-4xl md:text-5xl mt-0">Elemental Genesis</span></span>
-                        </h1>
-                        <p class="font-noto text-sm md:text-base text-brush-gray/80 uppercase tracking-[0.22em] leading-relaxed" data-aos="fade-up" data-aos-delay="120">
-                            第十一届全国青年华人文化研习与生活营 / 11th Chinese Cultural Camp (CCC)
-                        </p>
-                        <p class="font-noto text-xl md:text-2xl text-sage-green max-w-2xl mx-auto leading-relaxed mt-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1542332213-31f87348057f')"></div>
+                    <!-- gradient overlay to improve text contrast -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                    <div class="relative z-20 text-center px-6 max-w-5xl mx-auto text-paper-white">
+                        <h2 class="font-playfair text-7xl md:text-9xl text-paper-white\/95 mb-6 drop-shadow-sm" data-aos="fade-up">五行归序传</h2>
+                        <p class="font-noto text-xl md:text-2xl text-paper-white\/90 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                             ${t('home_tagline')}
                         </p>
-                        <div class="mt-12 flex flex-wrap gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="mt-12 flex gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
                             <a href="#registration" class="bg-midnight-blue text-paper-white px-8 py-4 rounded-md font-bold hover:bg-gold transition-all transform hover:-translate-y-1">${t('cta_begin')}</a>
-                            <a href="#about" class="border-2 border-midnight-blue text-midnight-blue px-8 py-4 rounded-md font-bold hover:bg-midnight-blue hover:text-white transition-all">${t('nav_about')}</a>
+                            <a href="#about" class="border-2 border-midnight-blue text-paper-white\/95 px-8 py-4 rounded-md font-bold hover:bg-midnight-blue hover:text-white transition-all">${t('nav_about')}</a>
                         </div>
                     </div>
                 </section>
                 <section class="py-20 px-6 max-w-5xl mx-auto text-center">
-                    <h2 class="font-playfair text-4xl text-midnight-blue mb-10">${t('home_mission_title')}</h2>
+                    <h3 class="font-playfair text-4xl text-midnight-blue mb-10">${t('home_mission_title')}</h3>
                     <p class="text-lg text-brush-gray leading-loose font-noto">${t('home_mission_body')}</p>
                 </section>
                 `;
@@ -113,46 +109,37 @@ export const contentManager = {
                 <section class="py-20 px-6 max-w-4xl mx-auto">
                     <div class="registration-panel bg-white/75 backdrop-blur-sm p-10 md:p-12 rounded-[28px] shadow-2xl border border-sage-green/10">
                         <div class="mb-10 text-center">
-                            <h1 class="font-playfair text-4xl md:text-5xl text-midnight-blue mb-3">${t('nav_reg')}</h1>
-                            <p class="text-sm text-brush-gray/80 leading-relaxed max-w-2xl mx-auto">
-                                ${lang === 'en'
-                                    ? 'Text below must be transcribed verbatim from assets/reference/Register-E.jpg (selectable HTML).' 
-                                    : '以下文字必须从 assets/reference/Register-C.jpg 逐字转写（可选择的HTML文本）。'}
-                            </p>
+                            <h1 class="font-playfair text-4xl md:text-5xl text-midnight-blue mb-3">Registration / 报名</h1>
                         </div>
 
-                        <!-- Reference-image preview (for layout QA only; copy must be real text below) -->
-                        <div class="grid md:grid-cols-2 gap-6 mb-10">
-                            <figure class="bg-paper/60 rounded-2xl border border-sage-green/10 overflow-hidden">
-                                <img src="assets/reference/Register-E.jpg" alt="Registration Reference (EN)" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-                                <figcaption class="p-3 text-xs text-brush-gray/70">Reference: Register-E.jpg</figcaption>
-                            </figure>
-                            <figure class="bg-paper/60 rounded-2xl border border-sage-green/10 overflow-hidden">
-                                <img src="assets/reference/Register-C.jpg" alt="Registration Reference (简体中文)" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-                                <figcaption class="p-3 text-xs text-brush-gray/70">Reference: Register-C.jpg</figcaption>
-                            </figure>
+                        <div class="space-y-12">
+                            ${lang === 'en' ? `
+                                <!-- English Section -->
+                                <section aria-label="English registration">
+                                    <h2 class="font-playfair text-2xl text-midnight-blue mb-4">11th Chinese Cultural Camp (CCC)</h2>
+                                    <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
+                                        <li><strong>Date:</strong> May 30th – June 1st 2026</li>
+                                        <li><strong>Venue:</strong> Nanyang Technological University (NTU)</li>
+                                        <li><strong>Registration Fee:</strong> 70 SGD (accommodation included)</li>
+                                        <li><strong>Registration Fee:</strong> 15 SGD (accommodation excluded)</li>
+                                    </ul>
+                                    <p class="mt-4 text-brush-gray"><strong>Event Objectives:</strong> Enhance understanding, encourage exploration on Chinese culture from fresh perspectives</p>
+                                </section>
+                            ` : `
+                                <!-- 中文 Section -->
+                                <section aria-label="中文报名">
+                                    <h2 class="font-playfair text-2xl text-midnight-blue mb-4">第十一届全国青年华人文化研习与生活营（青年文化营）</h2>
+                                    <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
+                                        <li><strong>日期：</strong>2026年5月30日–6月1日</li>
+                                        <li><strong>地点：</strong>南洋理工大学校区</li>
+                                        <li><strong>报名费：</strong>70 SGD（含住宿）</li>
+                                        <li><strong>报名费：</strong>15 SGD（不含住宿）</li>
+                                    </ul>
+                                    <p class="mt-4 text-brush-gray"><strong>活动宗旨：</strong>提升青少年对华人传统文化的认识，鼓励从新颖角度探索与发掘华人文化</p>
+                                </section>
+                            `}
                         </div>
 
-                        <!-- TODO: Replace these blocks with exact OCR text from the reference images (DO NOT GUESS). -->
-                        <div class="registration-copy space-y-8">
-                            <div class="reg-card">
-                                <h2 class="reg-heading">Registration Copy (EN)</h2>
-                                <p class="reg-body">Please provide the exact English registration text from <code>assets/reference/Register-E.jpg</code>. The reference images are shown above for layout verification.</p>
-                            </div>
-                            <div class="reg-card">
-                                <h2 class="reg-heading">报名文本（简体中文）</h2>
-                                <p class="reg-body">请提供 <code>assets/reference/Register-C.jpg</code> 中的逐字中文文本，或确认截图区域内容以便我们补齐排版。</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-10">
-                            <div id="reg-steps-indicator" class="flex justify-center gap-4 mb-6">
-                                <div class="step-dot active w-3 h-3 rounded-full bg-gold"></div>
-                                <div class="step-dot w-3 h-3 rounded-full bg-sage-green/20"></div>
-                                <div class="step-dot w-3 h-3 rounded-full bg-sage-green/20"></div>
-                            </div>
-                            <form id="reg-form" class="space-y-6"></form>
-                        </div>
                     </div>
                 </section>
                 `;

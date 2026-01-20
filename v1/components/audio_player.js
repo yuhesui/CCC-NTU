@@ -1,7 +1,7 @@
 export class AudioPlayer {
     constructor() {
         this.container = document.getElementById('audio-control-bar');
-        // Use the project's local background music file (place it under cyPYVoj/assets/audio/background_music.mp3)
+        // Use the project's local background music file (place it under v1/assets/audio/background_music.mp3)
         this.music = new Audio('assets/audio/background_music.mp3');
         this.speech = new Audio('https://v3b.fal.media/files/b/0a8a640e/5lWH1-6_CPpgYy6k6qcju_speech.mp3');
         this.music.loop = true;

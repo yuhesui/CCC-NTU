@@ -24,6 +24,11 @@ body {
 .bg-midnight-blue { background-color: var(--midnight-blue); }
 .bg-paper { background-color: var(--paper-white); }
 
+/* helper: light paper text colors used in hero overlays */
+.text-paper-white { color: var(--paper-white); }
+.text-paper-white\/95 { color: rgba(249,247,242,0.95); }
+.text-paper-white\/90 { color: rgba(249,247,242,0.90); }
+
 /* Shuimo Ink Transition */
 .ink-blob {
     filter: blur(40px);

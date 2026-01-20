@@ -29,6 +29,14 @@ export class Router {
             }
 
             lucide.createIcons();
+
+            // Reveal elements marked with data-aos="fade-up" using GSAP so they are not stuck at opacity:0
+            try {
+                gsap.fromTo('[data-aos="fade-up"]', { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, delay: 0.06 });
+            } catch (e) {
+                // GSAP may be unavailable in some contexts; fail silently
+                console.warn('AOS reveal skipped — GSAP not available', e);
+            }
         });
     }
 
@@ -39,6 +47,13 @@ export class Router {
         i18n.updateMetaTags(pageKey);
         if (pageKey === 'registration') new Registration().init();
         lucide.createIcons();
+
+        // Also animate newly-inserted AOS elements when updating the view programmatically
+        try {
+            gsap.fromTo('[data-aos="fade-up"]', { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, delay: 0.06 });
+        } catch (e) {
+            console.warn('AOS reveal skipped — GSAP not available', e);
+        }
     }
 
     async transition(callback) {
