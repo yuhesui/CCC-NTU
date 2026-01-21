@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="ccc-page" content="registration" />
+
+  <title>Registration | 11th Chinese Cultural Camp (CCC)</title>
+  <meta name="description" content="Register for 五行归序传 Elemental Genesis — 11th Chinese Cultural Camp (CCC)." />
+  <meta property="og:title" content="Registration | 11th Chinese Cultural Camp (CCC)" />
+  <meta property="og:description" content="Register for 五行归序传 Elemental Genesis — 11th Chinese Cultural Camp (CCC)." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop" />
+  <meta property="og:type" content="website" />
+
+  <!-- Local Chinese fonts (required) -->
+  <link rel="preload" href="./font/Body-YanZhenQingDuoBaoTaBei-2.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./font/Title-SongHuiZongShouJinJiaCuBan.ttf" as="font" type="font/ttf" crossorigin />
+
+  <!-- CDNs (kept from Archived/v1) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-paper text-ink-black overflow-x-hidden selection:bg-gold/30">
+
+  <div id="shuimo-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 flex items-center justify-center">
+    <div class="ink-blob w-[150vmax] h-[150vmax] bg-midnight-blue rounded-full scale-0"></div>
+  </div>
+
+  <header id="global-header" class="fixed top-0 w-full z-50 transition-all duration-300"></header>
+
+  <main id="app-view" class="min-h-screen pt-20">
+    <section class="py-20 px-6 max-w-4xl mx-auto registration">
+      <div class="registration-panel bg-white/75 backdrop-blur-sm p-10 md:p-12 rounded-[28px] shadow-2xl border border-sage-green/10">
+        <div class="mb-10 text-center">
+          <h1 class="text-4xl md:text-5xl text-midnight-blue mb-3">Registration / 报名</h1>
+        </div>
+
+        <div class="space-y-12" id="registration-copy">
+          <!-- This section is language-swapped by translations kept in i18n.js (text left as-is for v1 parity). -->
+          <section aria-label="English registration" class="lang-en">
+            <h2 class="text-2xl text-midnight-blue mb-4">11th Chinese Cultural Camp (CCC)</h2>
+            <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
+              <li><strong>Date:</strong> May 30th – June 1st 2026</li>
+              <li><strong>Venue:</strong> Nanyang Technological University (NTU)</li>
+              <li><strong>Registration Fee:</strong> 70 SGD (accommodation included)</li>
+              <li><strong>Registration Fee:</strong> 15 SGD (accommodation excluded)</li>
+            </ul>
+            <p class="mt-4 text-brush-gray"><strong>Event Objectives:</strong> Enhance understanding, encourage exploration on Chinese culture from fresh perspectives</p>
+          </section>
+
+          <section aria-label="中文报名" class="lang-zh hidden">
+            <h2 class="text-2xl text-midnight-blue mb-4">第十一届全国青年华人文化研习与生活营（青年文化营）</h2>
+            <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
+              <li><strong>日期：</strong>2026年5月30日–6月1日</li>
+              <li><strong>地点：</strong>南洋理工大学校区</li>
+              <li><strong>报名费：</strong>70 SGD（含住宿）</li>
+              <li><strong>报名费：</strong>15 SGD（不含住宿）</li>
+            </ul>
+            <p class="mt-4 text-brush-gray"><strong>活动宗旨：</strong>提升青少年对华人传统文化的认识，鼓励从新颖角度探索与发掘华人文化</p>
+          </section>
+
+          <!-- Optional interactive form from the archived SPA (kept, but now static per-page). -->
+          <div class="reg-card">
+            <div class="reg-heading" data-i18n="reg_title">Join the Genesis</div>
+            <div class="reg-body">
+              <form id="reg-form" class="mt-4"></form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="audio-control-bar" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+  <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
+
+  <script type="module" src="js/site.js"></script>
+  <script type="module">
+    import { i18n } from './js/i18n.js';
+
+    const apply = () => {
+      const lang = i18n.getLanguage();
+      const en = document.querySelector('.lang-en');
+      const zh = document.querySelector('.lang-zh');
+      if (en && zh) {
+        if (lang === 'en') {
+          en.classList.remove('hidden');
+          zh.classList.add('hidden');
+        } else {
+          zh.classList.remove('hidden');
+          en.classList.add('hidden');
+        }
+      }
+    };
+
+    apply();
+    window.addEventListener('languageChanged', apply);
+  </script>
+</body>
+</html>

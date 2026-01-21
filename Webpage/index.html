@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="ccc-page" content="home" />
+
+  <title>五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)</title>
+  <meta name="description" content="Discover 五行归序传 (Elemental Genesis) — 11th Chinese Cultural Camp (CCC). Explore Chinese culture through Wu Xing and ink-wash aesthetics." />
+  <meta property="og:title" content="五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)" />
+  <meta property="og:description" content="Discover 五行归序传 (Elemental Genesis) — 11th Chinese Cultural Camp (CCC). Explore Chinese culture through Wu Xing and ink-wash aesthetics." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop" />
+  <meta property="og:type" content="website" />
+
+  <!-- Local Chinese fonts (required) -->
+  <link rel="preload" href="./font/Body-YanZhenQingDuoBaoTaBei-2.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./font/Title-SongHuiZongShouJinJiaCuBan.ttf" as="font" type="font/ttf" crossorigin />
+
+  <!-- CDNs (kept from Archived/v1) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-paper text-ink-black overflow-x-hidden selection:bg-gold/30">
+
+  <!-- Ink Wash Transition Overlay (kept for visual identity) -->
+  <div id="shuimo-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 flex items-center justify-center">
+    <div class="ink-blob w-[150vmax] h-[150vmax] bg-midnight-blue rounded-full scale-0"></div>
+  </div>
+
+  <!-- Header / Navigation (injected by js/site.js) -->
+  <header id="global-header" class="fixed top-0 w-full z-50 transition-all duration-300"></header>
+
+  <!-- Main Content Area -->
+  <main id="app-view" class="min-h-screen pt-20">
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1542332213-31f87348057f')"></div>
+      <div class="absolute inset-0 hero-glass z-10"></div>
+      <div class="relative z-20 text-center px-6 max-w-5xl mx-auto text-paper-white">
+        <h2 class="text-7xl md:text-9xl text-paper-white/95 mb-6 drop-shadow-sm" data-aos="fade-up">五行归序传</h2>
+        <p class="text-xl md:text-2xl text-paper-white/90 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200" data-i18n="home_tagline">
+          Ink defines the world; the Five Elements restore the order. Rediscover your cultural roots through the rhythm of the brush.
+        </p>
+        <div class="mt-12 flex gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+          <a href="registration.html" class="bg-midnight-blue text-paper-white px-8 py-4 rounded-md font-bold hover:bg-gold transition-all transform hover:-translate-y-1" data-i18n="cta_begin">Begin Your Genesis</a>
+          <a href="about.html" class="border-2 border-midnight-blue text-paper-white/95 px-8 py-4 rounded-md font-bold hover:bg-midnight-blue hover:text-white transition-all" data-i18n="nav_about">About</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+      <h3 class="text-4xl text-midnight-blue mb-10" data-i18n="home_mission_title">Origin: Cultivating the Cultural Soul</h3>
+      <p class="text-lg text-brush-gray leading-loose" data-i18n="home_mission_body">
+        Elemental Genesis is more than a camp; it is a spiritual dialogue spanning millennia. Through an immersive exploration of the Wuxing philosophy (Metal, Wood, Water, Fire, and Earth), we empower participants to reconnect with the warmth and wisdom of Chinese heritage amidst the pulse of modern life.
+      </p>
+    </section>
+  </main>
+
+  <!-- Audio Player UI -->
+  <div id="audio-control-bar" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+
+  <!-- Footer (injected by js/site.js) -->
+  <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
+
+  <script type="module" src="js/site.js"></script>
+</body>
+</html>

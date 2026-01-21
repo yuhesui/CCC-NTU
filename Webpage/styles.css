@@ -1,0 +1,207 @@
+/*
+  Webpage/styles.css
+  Source of truth: Archived/v1/styles.css
+
+  IMPORTANT: Local Chinese fonts must load from ./font (NOT Google Fonts, NOT ./assets/font).
+*/
+
+/* Font Faces */
+@font-face {
+    font-family: 'YanZhenBody';
+    src: url('./font/Body-YanZhenQingDuoBaoTaBei-2.ttf') format('truetype');
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    /* Use for CJK unified ideographs */
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF;
+}
+
+@font-face {
+    font-family: 'SongHuiTitle';
+    src: url('./font/Title-SongHuiZongShouJinJiaCuBan.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF;
+}
+
+/* Typography variables and global rules */
+:root {
+    --midnight-blue: #1B3B6F;
+    --sage-green: #4F6D52;
+    --paper-white: #F9F7F2;
+    --gold: #B8860B;
+    --ink-black: #1A1A1A;
+    --brush-gray: #545454;
+
+    /* Font variables (local fonts) */
+    --font-body: 'YanZhenBody', serif;
+    --font-title: 'SongHuiTitle', serif;
+}
+
+body {
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: var(--paper-white);
+    background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+    color: var(--ink-black);
+    scroll-behavior: smooth;
+}
+
+/* Titles / headings */
+h1, h2, h3, .page-title, .section-title {
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Registration scope */
+.registration, .registration * {
+    font-family: var(--font-body);
+}
+.registration h1, .registration h2, .registration .tab-title {
+    font-family: var(--font-title);
+}
+
+/* color utilities */
+.text-midnight-blue { color: var(--midnight-blue); }
+.text-sage-green { color: var(--sage-green); }
+.text-gold { color: var(--gold); }
+.text-brush-gray { color: var(--brush-gray); }
+.bg-midnight-blue { background-color: var(--midnight-blue); }
+.bg-paper { background-color: var(--paper-white); }
+
+/* helper: light paper text colors used in hero overlays */
+.text-paper-white { color: var(--paper-white); }
+.text-paper-white\/95 { color: rgba(249,247,242,0.95); }
+.text-paper-white\/90 { color: rgba(249,247,242,0.90); }
+
+/* Shuimo Ink Transition */
+.ink-blob {
+    filter: blur(40px);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page Animations */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.visible [data-aos="fade-up"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Styles */
+input, select, textarea {
+    background: transparent !important;
+    border-bottom: 2px solid rgba(79, 109, 82, 0.2) !important;
+    transition: all 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+    border-bottom-color: var(--gold) !important;
+    outline: none;
+}
+
+/* Audio Player Pulse */
+@keyframes musicPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.audio-playing {
+    animation: musicPulse 2s infinite ease-in-out;
+}
+
+/* Registration reference-matching (ink-wash panel + cards) */
+.registration-panel {
+    position: relative;
+}
+
+.registration-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(1200px 400px at 20% 10%, rgba(27, 59, 111, 0.10), transparent 60%),
+        radial-gradient(900px 500px at 80% 30%, rgba(184, 134, 11, 0.10), transparent 55%),
+        radial-gradient(800px 600px at 50% 90%, rgba(79, 109, 82, 0.10), transparent 60%);
+    mix-blend-mode: multiply;
+    border-radius: 28px;
+}
+
+.reg-card {
+    position: relative;
+    background: rgba(249, 247, 242, 0.75);
+    border: 1px solid rgba(79, 109, 82, 0.12);
+    border-radius: 18px;
+    padding: 22px 22px;
+    box-shadow: 0 10px 24px rgba(26, 26, 26, 0.06);
+}
+
+.reg-heading {
+    font-family: var(--font-title);
+    font-size: 18px;
+    color: var(--midnight-blue);
+    margin-bottom: 8px;
+}
+
+.reg-body {
+    color: var(--brush-gray);
+    line-height: 1.8;
+}
+
+/* Ensure decent contrast for soft text utilities */
+.text-brush-gray\/80 {
+    color: rgba(84, 84, 84, 0.88);
+}
+
+/* Ensure elements detected as Chinese use the Chinese body font */
+.chinese-text, .chinese-text * {
+    font-family: var(--font-body) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    h1, h2, h3 { line-height: 1.1; }
+}
+
+/*
+  Glass overlay utility:
+  - Used for the hero gradient overlay to create a subtle "glass" look
+  - Includes graceful fallback if backdrop-filter isn't supported
+*/
+.hero-glass {
+    background: linear-gradient(to top, rgba(0,0,0,0.60), rgba(0,0,0,0.20), rgba(0,0,0,0.00));
+}
+
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    .hero-glass {
+        background: linear-gradient(to top, rgba(0,0,0,0.52), rgba(0,0,0,0.18), rgba(0,0,0,0.00));
+        -webkit-backdrop-filter: blur(12px) saturate(110%);
+        backdrop-filter: blur(12px) saturate(110%);
+    }
+}
+
+/*
+  Header scroll-state styling
+  - The injected header uses Tailwind classes (bg-paper/80 backdrop-blur-md).
+  - On the very top (scrollY=0) it can feel too dark/opaque against the hero.
+  - We add a body class to slightly lighten it and reduce border contrast.
+*/
+body.at-top #global-header nav {
+    background-color: rgba(249, 247, 242, 0.55) !important;
+    border-bottom-color: rgba(79, 109, 82, 0.06) !important;
+}
+
+body.at-top #global-header {
+    /* small lift so hero feels less "blocked" */
+    backdrop-filter: none;
+}

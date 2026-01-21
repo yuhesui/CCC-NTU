@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="ccc-page" content="events" />
+
+  <title>Events & Posters | 11th Chinese Cultural Camp (CCC)</title>
+  <meta name="description" content="View CCC event posters and key info, including roadshow details and the main camp poster." />
+  <meta property="og:title" content="Events & Posters | 11th Chinese Cultural Camp (CCC)" />
+  <meta property="og:description" content="View CCC event posters and key info, including roadshow details and the main camp poster." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop" />
+  <meta property="og:type" content="website" />
+
+  <!-- Local Chinese fonts (required) -->
+  <link rel="preload" href="./font/Body-YanZhenQingDuoBaoTaBei-2.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./font/Title-SongHuiZongShouJinJiaCuBan.ttf" as="font" type="font/ttf" crossorigin />
+
+  <!-- CDNs (kept from Archived/v1) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-paper text-ink-black overflow-x-hidden selection:bg-gold/30">
+
+  <div id="shuimo-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 flex items-center justify-center">
+    <div class="ink-blob w-[150vmax] h-[150vmax] bg-midnight-blue rounded-full scale-0"></div>
+  </div>
+
+  <header id="global-header" class="fixed top-0 w-full z-50 transition-all duration-300"></header>
+
+  <main id="app-view" class="min-h-screen pt-20">
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+      <h1 class="text-5xl text-midnight-blue mb-12 text-center" data-i18n="nav_events">Events</h1>
+
+      <div class="max-w-3xl mx-auto mb-14">
+        <a
+          class="block group rounded-2xl overflow-hidden border border-sage-green/15 bg-white/60 shadow-lg hover:shadow-xl transition-shadow"
+          target="_blank"
+          rel="noopener"
+          data-lang-href-en="assets/posters/SingaporeRoadshow_E.jpg"
+          data-lang-href-zh="assets/posters/SingaporeRoadshow_C.jpg"
+          href="assets/posters/SingaporeRoadshow_E.jpg"
+        >
+          <div class="relative">
+            <img
+              data-lang-src-en="assets/posters/SingaporeRoadshow_E.jpg"
+              data-lang-src-zh="assets/posters/SingaporeRoadshow_C.jpg"
+              src="assets/posters/SingaporeRoadshow_E.jpg"
+              alt="Main Camp Poster"
+              class="w-full h-[420px] object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <div class="text-xs uppercase tracking-[0.25em] text-paper-white/90 font-bold" data-i18n="events_main_poster_label">Main Camp Poster</div>
+              <div class="text-3xl text-paper-white mt-2">Elemental Genesis</div>
+              <div class="text-sm text-paper-white/90 mt-2" data-i18n="events_main_poster_cta">Click to open the poster JPG</div>
+            </div>
+          </div>
+          <div class="p-6 flex flex-wrap items-center justify-between gap-3">
+            <div class="text-sm text-brush-gray leading-relaxed" data-i18n="event_main_desc">
+              A 3-day immersive journey featuring elemental rituals and grand puzzles.
+            </div>
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-midnight-blue border border-midnight-blue/20 px-4 py-2 rounded-full group-hover:border-gold group-hover:text-gold transition-colors">
+              <span data-i18n="events_view_poster">View Poster</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-midnight-blue">
+          <span class="text-xs uppercase tracking-widest text-sage-green font-bold" data-i18n="events_my_region">Malaysia Online</span>
+          <h2 class="text-2xl mt-2 mb-4" data-i18n="events_my_title">Online Roadshow</h2>
+          <p class="text-sm text-brush-gray mb-4" data-i18n="events_my_timeplace">Feb 5 – Feb 8 | Zoom</p>
+          <div class="text-sm leading-relaxed opacity-90" data-i18n="event_my_desc">Virtual cultural teasers and early-bird registration info via Zoom.</div>
+          <div class="mt-6 grid gap-3">
+            <img
+              data-lang-src-en="assets/posters/MalaysiaRoadshow_E.jpg"
+              data-lang-src-zh="assets/posters/MalaysiaRoadshow_C.jpg"
+              src="assets/posters/MalaysiaRoadshow_E.jpg"
+              alt="Malaysia Roadshow Poster"
+              class="w-full rounded-lg border border-sage-green/10"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-sage-green">
+          <span class="text-xs uppercase tracking-widest text-sage-green font-bold" data-i18n="events_sg_region">Singapore Physical</span>
+          <h2 class="text-2xl mt-2 mb-4" data-i18n="events_sg_title">Campus Roadshow</h2>
+          <p class="text-sm text-brush-gray mb-4" data-i18n="events_sg_timeplace">March 2 – March 6 | NTU</p>
+          <div class="text-sm leading-relaxed opacity-90" data-i18n="event_sg_desc">Live knot-making demos and 'Wuxing' personality quizzes on campus.</div>
+          <div class="mt-6 grid gap-3">
+            <img
+              data-lang-src-en="assets/posters/SingaporeRoadshow_E.jpg"
+              data-lang-src-zh="assets/posters/SingaporeRoadshow_C.jpg"
+              src="assets/posters/SingaporeRoadshow_E.jpg"
+              alt="Singapore Roadshow Poster"
+              class="w-full rounded-lg border border-sage-green/10"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="audio-control-bar" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+  <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
+
+  <script type="module" src="js/site.js"></script>
+</body>
+</html>

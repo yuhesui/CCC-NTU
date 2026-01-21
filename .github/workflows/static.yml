@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Serve `v1` locally for smoke test
+      - name: Serve `Webpage` locally for smoke test
         # Render the static folder on the runner and verify it returns HTTP 200.
         run: |
           # Use python3 if available, fallback to python
@@ -66,8 +66,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the v1 folder (this is the website root)
-          path: 'v1'
+          # Upload only the Webpage folder (this is the website root)
+          path: 'Webpage'
 
       - name: Deploy to GitHub Pages
         id: deployment
