@@ -37,9 +37,9 @@ jobs:
         run: |
           # Use python3 if available, fallback to python
           if command -v python3 >/dev/null 2>&1; then
-            python3 -m http.server 4000 --directory cyPYVoj &>/dev/null & echo $! > server.pid
+            python3 -m http.server 4000 --directory Webpage &>/dev/null & echo $! > server.pid
           else
-            python -m http.server 4000 --directory cyPYVoj &>/dev/null & echo $! > server.pid
+            python -m http.server 4000 --directory Webpage &>/dev/null & echo $! > server.pid
           fi
           # give the server a moment to start
           sleep 2
