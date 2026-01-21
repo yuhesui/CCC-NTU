@@ -134,7 +134,7 @@ export const i18n = {
       fee_full: "全程参与 (含住宿)",
       fee_day: "日间通行 (不含住宿)",
       fee_note: "包含入门礼包、文化工坊材料及专属周边。",
-      reg_title: "归序报名",
+      reg_title: "报名",
       btn_next: "下一步",
       btn_prev: "上一步",
       btn_submit: "提交报名",
