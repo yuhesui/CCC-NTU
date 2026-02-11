@@ -64,8 +64,8 @@ export const i18n = {
       faq_a1: "Open to all tertiary students in Singapore and Malaysia.",
       faq_q2: "Is vegetarian food provided?",
       faq_a2: "Yes, we provide Halal-certified and vegetarian options.",
-      faq_q3: "What does $70 fee include?",
-      faq_a3: "Accommodation, all meals, workshop materials, and T-shirt.",
+      faq_q3: "What are the registration fee options?",
+      faq_a3: "15 SGD (without accommodation) or 95 SGD (Accommodation required).",
 
       // Events page (bilingual UI strings)
       events_main_poster_label: 'Main Camp Poster',
@@ -148,8 +148,8 @@ export const i18n = {
       faq_a1: "面向新加坡和马来西亚的所有大专院校学生。",
       faq_q2: "是否提供素食？",
       faq_a2: "是的，我们提供清真与素食选项。",
-      faq_q3: "$70费用包含什么？",
-      faq_a3: "住宿、所有膳食、工坊材料及营衫。",
+      faq_q3: "报名费用有哪些选项？",
+      faq_a3: "15 SGD（不含住宿）或95 SGD（需住宿）。",
 
       // Events page (bilingual UI strings)
       events_main_poster_label: '主海报',
