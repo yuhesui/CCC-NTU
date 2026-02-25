@@ -15,21 +15,24 @@ export const i18n = {
       // Global naming
       project_title_zh: "五行归序传",
       project_title_en: "Elemental Genesis",
+      brand_title: "Chinese Cultural Camp",
+      brand_subtitle: "Youth Cultural Camp",
       ccc_title_en: "11th Chinese Cultural Camp (CCC)",
+      ccc_title_zh: "第十一届全国青年华人文化研习与生活营",
 
       // Meta (per-page)
-      meta_title_home: "五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)",
+      meta_title_home: "11th Chinese Cultural Camp (CCC)",
       meta_desc_home:
-        "Discover 五行归序传 (Elemental Genesis) — 11th Chinese Cultural Camp (CCC). Explore Chinese culture through Wu Xing and ink-wash aesthetics.",
+        "Discover the 11th Chinese Cultural Camp (CCC), themed Elemental Genesis. Explore Chinese culture through Wu Xing and ink-wash aesthetics.",
       meta_title_about: "About | 11th Chinese Cultural Camp (CCC)",
       meta_desc_about:
         "Learn about the camp’s heritage, concept, and participation details for the 11th Chinese Cultural Camp (CCC).",
       meta_title_events: "Events & Posters | 11th Chinese Cultural Camp (CCC)",
       meta_desc_events:
-        "View CCC event posters and key info, including roadshow details and the main camp poster.",
+        "View CCC event posters and key information for the main camp activities.",
       meta_title_registration: "Registration | 11th Chinese Cultural Camp (CCC)",
       meta_desc_registration:
-        "Register for 五行归序传 Elemental Genesis — 11th Chinese Cultural Camp (CCC).",
+        "Register for the 11th Chinese Cultural Camp (CCC).",
       meta_title_gallery: "Gallery | 11th Chinese Cultural Camp (CCC)",
       meta_desc_gallery: "A glimpse into past moments and visuals from CCC.",
       meta_title_faq: "FAQ | 11th Chinese Cultural Camp (CCC)",
@@ -37,8 +40,9 @@ export const i18n = {
       meta_title_contact: "Contact | 11th Chinese Cultural Camp (CCC)",
       meta_desc_contact: "Contact the CCC organizing team at NTU for enquiries and support.",
 
+      home_hero_title: "11th Chinese Cultural Camp (CCC)",
       home_tagline:
-        "Ink defines the world; the Five Elements restore the order. Rediscover your cultural roots through the rhythm of the brush.",
+        "Theme: Elemental Genesis. Rediscover your cultural roots through the rhythm of the brush.",
       cta_begin: "Begin Your Genesis",
       home_mission_title: "Origin: Cultivating the Cultural Soul",
       home_mission_body:
@@ -51,6 +55,10 @@ export const i18n = {
       fee_day: "Day Pass (Commuter)",
       fee_note: "Includes starter kit, cultural workshop materials, and exclusive merchandise.",
       reg_title: "Join the Genesis",
+      registration_link_heading: "Registration",
+      registration_link_desc: "Please register through the official tracking form link below.",
+      registration_link_cta: "Registration Link",
+      registration_link_unavailable: "Registration is not yet open. Please check back soon.",
       btn_next: "Continue",
       btn_prev: "Back",
       btn_submit: "Complete Registration",
@@ -58,27 +66,25 @@ export const i18n = {
       footer_links_title: "Navigation",
       footer_rights: "© 2026 Chinese Society NTU. All Rights Reserved.",
       event_main_desc: "A 3-day immersive journey featuring elemental rituals and grand puzzles.",
-      event_my_desc: "Virtual cultural teasers and early-bird registration info via Zoom.",
-      event_sg_desc: "Live knot-making demos and 'Wuxing' personality quizzes on campus.",
+      event_secondary_desc: "Explore the detailed camp schedule and highlighted workshops.",
       faq_q1: "Who can join the camp?",
-      faq_a1: "Open to all tertiary students in Singapore and Malaysia.",
+      faq_a1: "Open to all tertiary students in Singapore.",
       faq_q2: "Is vegetarian food provided?",
       faq_a2: "Yes, we provide Halal-certified and vegetarian options.",
-      faq_q3: "What does $70 fee include?",
-      faq_a3: "Accommodation, all meals, workshop materials, and T-shirt.",
+      faq_q3: "What do the registration fees include?",
+      faq_a3: "$95 (accommodation included) covers stay, meals, workshop materials, and camp T-shirt. $15 (accommodation excluded) includes day participation materials.",
 
       // Events page (bilingual UI strings)
       events_main_poster_label: 'Main Camp Poster',
-      events_main_poster_cta: 'Click to open the poster JPG',
+      events_main_poster_cta: 'Click to open the poster PNG',
+      events_secondary_poster_label: 'Camp Program Poster',
       events_view_poster: 'View Poster',
 
-      events_my_region: 'Malaysia Online',
-      events_my_title: 'Online Roadshow',
-      events_my_timeplace: 'Feb 5 – Feb 8 | Zoom',
-
-      events_sg_region: 'Singapore Physical',
-      events_sg_title: 'Campus Roadshow',
-      events_sg_timeplace: 'March 2 – March 6 | NTU',
+      // Contact page
+      contact_email: 'Email',
+      contact_address: 'Address',
+      contact_instagram: 'Instagram',
+      contact_facebook: 'Facebook',
 
       // Fill out missing FAQ keys used by faq.html
       faq_q4: 'faq_q4', faq_a4: 'faq_a4',
@@ -101,20 +107,23 @@ export const i18n = {
       // Global naming
       project_title_zh: "五行归序传",
       project_title_en: "Elemental Genesis",
-      ccc_title_zh: "第十一届全国青年华人文化研习与生活营（青年文化营）",
+      brand_title: "青年文化营 Chinese Cultural Camp",
+      brand_subtitle: "Chinese Cultural Camp",
+      ccc_title_zh: "第十一届全国青年华人文化研习与生活营",
+      ccc_title_en: "11th Chinese Cultural Camp (CCC)",
 
       // Meta (per-page)
-      meta_title_home: "五行归序传 Elemental Genesis | 11th Chinese Cultural Camp (CCC)",
+      meta_title_home: "第十一届全国青年华人文化研习与生活营 | 11th Chinese Cultural Camp (CCC)",
       meta_desc_home:
-        "五行归序传（Elemental Genesis）|11th Chinese Cultural Camp (CCC)。以五行与水墨意境为引，探索中华文化与当代青年对话。",
+        "第十一届全国青年华人文化研习与生活营（11th Chinese Cultural Camp）。主题为五行归序传，以五行与水墨意境探索中华文化。",
       meta_title_about: "关于 | 11th Chinese Cultural Camp (CCC)",
       meta_desc_about:
         "了解第十一届全国青年华人文化研习与生活营（青年文化营）的理念、背景与参与信息。",
       meta_title_events: "活动与海报 | 11th Chinese Cultural Camp (CCC)",
-      meta_desc_events: "查看CCC活动海报与路演信息，并直接打开高清海报。",
+      meta_desc_events: "查看CCC活动主海报与营会活动内容海报。",
       meta_title_registration: "报名 | 11th Chinese Cultural Camp (CCC)",
       meta_desc_registration:
-        "报名参加五行归序传 Elemental Genesis|11th Chinese Cultural Camp (CCC)。",
+        "报名参加第十一届全国青年华人文化研习与生活营。",
       meta_title_gallery: "相册 | 11th Chinese Cultural Camp (CCC)",
       meta_desc_gallery: "回顾CCC精彩瞬间与视觉记录。",
       meta_title_faq: "常见问题 | 11th Chinese Cultural Camp (CCC)",
@@ -122,7 +131,8 @@ export const i18n = {
       meta_title_contact: "联系 | 11th Chinese Cultural Camp (CCC)",
       meta_desc_contact: "联系CCC筹委会获取更多资讯与协助。",
 
-      home_tagline: "墨化万物，五行归序。在流转的笔触中，寻回文化的本源。",
+      home_hero_title: "第十一届全国青年华人文化研习与生活营",
+      home_tagline: "主题：五行归序传。在流转的笔触中，寻回文化的本源。",
       cta_begin: "开启归序之旅",
       home_mission_title: "溯源：深耕文化之魂",
       home_mission_body:
@@ -135,6 +145,10 @@ export const i18n = {
       fee_day: "日间通行 (不含住宿)",
       fee_note: "包含入门礼包、文化工坊材料及专属周边。",
       reg_title: "报名",
+      registration_link_heading: "报名入口",
+      registration_link_desc: "请通过以下官方报名链接进行报名（后续将替换为正式链接）。",
+      registration_link_cta: "报名链接",
+      registration_link_unavailable: "报名通道尚未开放，请稍后查看。",
       btn_next: "下一步",
       btn_prev: "上一步",
       btn_submit: "提交报名",
@@ -142,27 +156,25 @@ export const i18n = {
       footer_links_title: "快速链接",
       footer_rights: "© 2026 南大中文学会。版权所有。",
       event_main_desc: "为期3天2夜的沉浸式旅程，涵盖五行仪式与大型解谜。",
-      event_my_desc: "通过Zoom进行的虚拟文化预热及早鸟报名咨询。",
-      event_sg_desc: "校园内的现场中国结演示与“五行”性格测试。",
+      event_secondary_desc: "查看营会流程、文化工坊亮点与活动细节安排。",
       faq_q1: "谁可以参加？",
-      faq_a1: "面向新加坡和马来西亚的所有大专院校学生。",
+      faq_a1: "面向新加坡所有大专院校学生。",
       faq_q2: "是否提供素食？",
       faq_a2: "是的，我们提供清真与素食选项。",
-      faq_q3: "$70费用包含什么？",
-      faq_a3: "住宿、所有膳食、工坊材料及营衫。",
+      faq_q3: "报名费包含哪些内容？",
+      faq_a3: "$95（含住宿）包含住宿、膳食、工坊材料与营衫；$15（不含住宿）包含日间活动参与与材料。",
 
       // Events page (bilingual UI strings)
       events_main_poster_label: '主海报',
       events_main_poster_cta: '点击打开高清海报',
+      events_secondary_poster_label: '活动内容海报',
       events_view_poster: '查看海报',
 
-      events_my_region: '马来西亚线上',
-      events_my_title: '线上路演',
-      events_my_timeplace: '2月5日 – 2月8日 | Zoom',
-
-      events_sg_region: '新加坡线下',
-      events_sg_title: '校园路演',
-      events_sg_timeplace: '3月2日 – 3月6日 | NTU',
+      // Contact page
+      contact_email: '电子邮箱',
+      contact_address: '地址',
+      contact_instagram: 'Instagram',
+      contact_facebook: 'Facebook',
 
       // Fill out missing FAQ keys used by faq.html
       faq_q4: 'faq_q4', faq_a4: 'faq_a4',

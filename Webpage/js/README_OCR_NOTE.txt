@@ -5,7 +5,7 @@ In this workspace environment, neither `tesseract` nor Python (`python`/`py`) wa
 so automated OCR extraction could not be executed from within the repo tooling.
 
 What we did instead:
-- Kept the posters as the display source of truth (assets/posters/*Roadshow_{E,C}.jpg)
+- Kept the posters as the display source of truth (assets/posters/CCC_final*.png)
 - Made all Events-page labels and metadata bilingual via the existing i18n toggle
 - Documented how to run OCR locally (outside the repo) in the main README
 
