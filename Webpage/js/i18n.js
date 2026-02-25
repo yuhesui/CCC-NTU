@@ -77,6 +77,7 @@ export const i18n = {
       // Events page (bilingual UI strings)
       events_main_poster_label: 'Main Camp Poster',
       events_main_poster_cta: 'Click to open the poster PNG',
+      events_secondary_poster_cta: 'Click to open the poster PNG',
       events_secondary_poster_label: 'Camp Program Poster',
       events_view_poster: 'View Poster',
 
@@ -167,6 +168,7 @@ export const i18n = {
       // Events page (bilingual UI strings)
       events_main_poster_label: '主海报',
       events_main_poster_cta: '点击打开高清海报',
+      events_secondary_poster_cta: '点击打开高清海报',
       events_secondary_poster_label: '活动内容海报',
       events_view_poster: '查看海报',
 

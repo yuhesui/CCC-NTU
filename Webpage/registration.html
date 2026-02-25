@@ -67,8 +67,8 @@
             <div class="reg-body mt-4">
               <p class="text-brush-gray" data-i18n="registration_link_desc">Please register through the official tracking form link below.</p>
               <!-- TODO: Replace placeholder button with an <a> pointing to the official CCC registration tracking form URL. -->
-              <button type="button" onclick="document.getElementById('reg-unavailable-msg').classList.remove('hidden')" class="inline-flex mt-6 items-center gap-2 bg-midnight-blue text-paper-white px-6 py-3 rounded-md font-bold hover:bg-gold hover:text-midnight-blue transition-all cursor-pointer">
-                <span data-i18n="registration_link_cta">Registration Link</span>
+              <button type="button" aria-labelledby="registration-link-label" onclick="document.getElementById('reg-unavailable-msg').classList.remove('hidden')" class="inline-flex mt-6 items-center gap-2 bg-midnight-blue text-paper-white px-6 py-3 rounded-md font-bold hover:bg-gold hover:text-midnight-blue transition-all cursor-pointer">
+                <span id="registration-link-label" data-i18n="registration_link_cta">Registration Link</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
               </button>
               <p id="reg-unavailable-msg" class="hidden mt-3 text-sm text-brush-gray italic" data-i18n="registration_link_unavailable">Registration is not yet open. Please check back soon.</p>
