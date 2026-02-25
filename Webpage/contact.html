@@ -13,11 +13,9 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop" />
   <meta property="og:type" content="website" />
 
-  <!-- Local Chinese fonts (required) -->
   <link rel="preload" href="./font/Body-YanZhenQingDuoBaoTaBei-2.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="preload" href="./font/Title-SongHuiZongShouJinJiaCuBan.ttf" as="font" type="font/ttf" crossorigin />
 
-  <!-- CDNs (kept from Archived/v1) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -40,15 +38,30 @@
           <div class="flex gap-4">
             <i data-lucide="mail" class="text-gold"></i>
             <div>
-              <p class="font-bold">Email</p>
+              <p class="font-bold" data-i18n="contact_email">Email</p>
               <p class="text-brush-gray">ntu-chs@e.ntu.edu.sg</p>
             </div>
           </div>
           <div class="flex gap-4">
             <i data-lucide="map-pin" class="text-gold"></i>
             <div>
-              <p class="font-bold">Address</p>
+              <p class="font-bold" data-i18n="contact_address">Address</p>
               <p class="text-brush-gray">50 Nanyang Ave, Singapore 639798</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <i data-lucide="instagram" class="text-gold"></i>
+            <div>
+              <p class="font-bold" data-i18n="contact_instagram">Instagram</p>
+              <a class="text-brush-gray hover:text-midnight-blue" href="https://instagram.com/ntuchineseculturalcamp" target="_blank" rel="noopener">@ntuchineseculturalcamp</a>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <i data-lucide="facebook" class="text-gold"></i>
+            <div>
+              <p class="font-bold" data-i18n="contact_facebook">Facebook</p>
+              <!-- TODO: Replace placeholder href with official Facebook page URL once confirmed. -->
+              <a class="text-brush-gray hover:text-midnight-blue" href="#">NTU CS Chinese Cultural Camp</a>
             </div>
           </div>
         </div>
