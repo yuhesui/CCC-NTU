@@ -146,7 +146,7 @@ export const i18n = {
       fee_note: "包含入门礼包、文化工坊材料及专属周边。",
       reg_title: "报名",
       registration_link_heading: "报名入口",
-      registration_link_desc: "请通过以下官方报名链接进行报名（后续将替换为正式链接）。",
+      registration_link_desc: "请通过以下官方报名链接进行报名。",
       registration_link_cta: "报名链接",
       registration_link_unavailable: "报名通道尚未开放，请稍后查看。",
       btn_next: "下一步",
