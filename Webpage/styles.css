@@ -37,6 +37,34 @@
     /* Font variables (local fonts) */
     --font-body: 'YanZhenBody', serif;
     --font-title: 'SongHuiTitle', serif;
+    --font-cjk-kaiti: 'KaiTi', 'STKaiti', 'Kaiti SC', 'DFKai-SB', serif;
+
+    /* Wu Xing palette accents */
+    --wuxing-water: rgba(40, 82, 135, 0.20);
+    --wuxing-wood: rgba(67, 116, 72, 0.18);
+    --wuxing-fire: rgba(168, 71, 56, 0.16);
+    --wuxing-earth: rgba(146, 110, 74, 0.16);
+    --wuxing-metal: rgba(176, 141, 83, 0.18);
+}
+
+
+
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 70;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        #285287 0%,
+        #437448 24%,
+        #a76f39 49%,
+        #a84738 74%,
+        #b08d53 100%);
+    opacity: 0.82;
 }
 
 body {
@@ -46,7 +74,13 @@ body {
     font-style: normal;
 
     background-color: var(--paper-white);
-    background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+    background-image:
+      radial-gradient(1000px 480px at 8% 12%, var(--wuxing-water), transparent 60%),
+      radial-gradient(860px 420px at 88% 14%, var(--wuxing-fire), transparent 58%),
+      radial-gradient(840px 460px at 20% 88%, var(--wuxing-wood), transparent 62%),
+      radial-gradient(920px 500px at 82% 84%, var(--wuxing-earth), transparent 60%),
+      radial-gradient(760px 420px at 50% 48%, var(--wuxing-metal), transparent 65%),
+      url("https://www.transparenttextures.com/patterns/parchment.png");
     color: var(--ink-black);
     scroll-behavior: smooth;
 }
@@ -162,8 +196,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* Ensure elements detected as Chinese use the Chinese body font */
-.chinese-text, .chinese-text * {
-    font-family: var(--font-body) !important;
+.chinese-text, .chinese-text *, .lang-zh, .lang-zh * {
+    font-family: var(--font-cjk-kaiti) !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
