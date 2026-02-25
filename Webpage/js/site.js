@@ -119,8 +119,8 @@ function renderHeaderFooter() {
         <a class="flex items-center gap-3" href="index.html" aria-label="Home">
           <img src="assets/logo/logo_beige_base.png" alt="CCC Logo" class="w-10 h-10 md:w-11 md:h-11 object-contain" loading="eager" decoding="async" />
           <div>
-            <div class="font-bold text-midnight-blue leading-none text-lg">五行归序传</div>
-            <p class="text-[9px] uppercase tracking-[0.2em] text-sage-green font-bold">Elemental Genesis</p>
+            <div class="font-bold text-midnight-blue leading-none text-lg">${i18n.t('brand_title')}</div>
+            <p class="text-[9px] uppercase tracking-[0.2em] text-sage-green font-bold">${i18n.t('brand_subtitle')}</p>
           </div>
         </a>
 
@@ -150,7 +150,7 @@ function renderHeaderFooter() {
         <div class="space-y-4">
           <a href="index.html" class="inline-flex items-center gap-3" aria-label="Home">
             <img src="assets/logo/logo_beige_base.png" alt="CCC Logo" class="w-9 h-9 object-contain" loading="lazy" decoding="async" />
-            <div class="text-2xl text-gold">Elemental Genesis</div>
+            <div class="text-2xl text-gold">${i18n.t(lang === 'en' ? 'ccc_title_en' : 'ccc_title_zh')}</div>
           </a>
           <p class="text-sm opacity-70 italic">\"${i18n.t('footer_quote')}\"</p>
         </div>
@@ -165,8 +165,8 @@ function renderHeaderFooter() {
         </div>
         <div class="space-y-6 md:text-right">
           <div class="flex md:justify-end gap-4">
-            <a href="#" class="p-2 border border-white/20 rounded-full hover:border-gold transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-            <a href="#" class="p-2 border border-white/20 rounded-full hover:border-gold transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            <a href="https://instagram.com/ntuchineseculturalcamp" target="_blank" rel="noopener" class="p-2 border border-white/20 rounded-full hover:border-gold transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <button type="button" class="p-2 border border-white/20 rounded-full hover:border-gold transition-colors cursor-not-allowed opacity-60" aria-label="Facebook (official URL coming soon)" aria-disabled="true" disabled title="Facebook link coming soon"><i data-lucide="facebook" class="w-5 h-5"></i></button>
           </div>
           <p class="text-xs opacity-50">${i18n.t('footer_rights')}</p>
         </div>
@@ -196,6 +196,9 @@ function setupEventsPosterSwap() {
     swapImgs.forEach((img) => {
       const next = lang === 'en' ? img.getAttribute('data-lang-src-en') : img.getAttribute('data-lang-src-zh');
       if (next) img.setAttribute('src', next);
+
+      const nextAlt = lang === 'en' ? img.getAttribute('data-lang-alt-en') : img.getAttribute('data-lang-alt-zh');
+      if (nextAlt) img.setAttribute('alt', nextAlt);
     });
 
     const swapLinks = document.querySelectorAll('[data-lang-href-en][data-lang-href-zh]');
