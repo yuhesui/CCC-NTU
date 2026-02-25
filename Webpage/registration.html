@@ -40,26 +40,15 @@
         </div>
 
         <div class="space-y-12" id="registration-copy">
-          <section aria-label="English registration" class="lang-en">
-            <h2 class="text-2xl text-midnight-blue mb-4">11th Chinese Cultural Camp (CCC)</h2>
+          <section>
+            <h2 class="text-2xl text-midnight-blue mb-4" data-i18n="reg_event_title">11th Chinese Cultural Camp (CCC)</h2>
             <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
-              <li><strong>Date:</strong> 5th June – 7th June 2026</li>
-              <li><strong>Venue:</strong> Nanyang Technological University (NTU)</li>
-              <li><strong>Registration Fee:</strong> $95 (accommodation included)</li>
-              <li><strong>Registration Fee:</strong> $15 (accommodation excluded)</li>
+              <li><strong data-i18n="reg_date_label">Date:</strong> <span data-i18n="event_date">5th June – 7th June 2026</span></li>
+              <li><strong data-i18n="reg_venue_label">Venue:</strong> <span data-i18n="event_venue">Nanyang Technological University (NTU)</span></li>
+              <li><strong data-i18n="reg_fee_label">Registration Fee:</strong> <span data-i18n="event_fee_full">$95 (accommodation included)</span></li>
+              <li><strong data-i18n="reg_fee_label">Registration Fee:</strong> <span data-i18n="event_fee_day">$15 (accommodation excluded)</span></li>
             </ul>
-            <p class="mt-4 text-brush-gray"><strong>Event Objectives:</strong> Enhance understanding, encourage exploration on Chinese culture from fresh perspectives</p>
-          </section>
-
-          <section aria-label="中文报名" class="lang-zh hidden">
-            <h2 class="text-2xl text-midnight-blue mb-4">第十一届全国青年华人文化研习与生活营</h2>
-            <ul class="list-disc list-inside text-brush-gray leading-relaxed space-y-2">
-              <li><strong>日期：</strong>2026年6月5日–6月7日</li>
-              <li><strong>地点：</strong>南洋理工大学校区</li>
-              <li><strong>报名费：</strong>$95（含住宿）</li>
-              <li><strong>报名费：</strong>$15（不含住宿）</li>
-            </ul>
-            <p class="mt-4 text-brush-gray"><strong>活动宗旨：</strong>提升青少年对华人传统文化的认识，鼓励从新颖角度探索与发掘华人文化</p>
+            <p class="mt-4 text-brush-gray"><strong data-i18n="reg_objectives_label">Event Objectives:</strong> <span data-i18n="reg_objectives_value">Enhance understanding, encourage exploration on Chinese culture from fresh perspectives</span></p>
           </section>
 
           <section class="reg-card">
@@ -83,26 +72,5 @@
   <footer id="global-footer" class="bg-midnight-blue text-paper-white py-16 px-6"></footer>
 
   <script type="module" src="js/site.js"></script>
-  <script type="module">
-    import { i18n } from './js/i18n.js';
-
-    const apply = () => {
-      const lang = i18n.getLanguage();
-      const en = document.querySelector('.lang-en');
-      const zh = document.querySelector('.lang-zh');
-      if (en && zh) {
-        if (lang === 'en') {
-          en.classList.remove('hidden');
-          zh.classList.add('hidden');
-        } else {
-          zh.classList.remove('hidden');
-          en.classList.add('hidden');
-        }
-      }
-    };
-
-    apply();
-    window.addEventListener('languageChanged', apply);
-  </script>
 </body>
 </html>
